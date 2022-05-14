@@ -15,7 +15,7 @@ with st.echo(code_location='below'):
                          labels=dict(Month="Месяц", Total ="Сумма продаж"))\
             .update_xaxes(categoryorder='array', categoryarray=['January','February', 'March'],)
         return fig
-
+    ### Основано на демо коде START
     @st.cache
     def get_data():
         data_url = (
@@ -30,8 +30,7 @@ with st.echo(code_location='below'):
                 )
             )
         )
-
-
+    ### Основано на демо коде END
     sns.set_palette("Paired")
     df=get_data()
     df['Month'] = df['Date'].dt.month_name()
